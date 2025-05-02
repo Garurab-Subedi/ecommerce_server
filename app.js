@@ -6,7 +6,7 @@ import fastifySocketIO from 'fastify-socket.io';
 import { registerRoutes } from './src/routes/index.js';
 
 const start = async () => {
-   await connectDB(process.env.MONGO_URI);
+   await connectDB(process.env.MONGO_URL);
    const app = fastify();
 
    app.register(fastifySocketIO, {

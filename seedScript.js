@@ -1,14 +1,13 @@
-import "dotenv/config.js";
+import dotenv from "dotenv";
 import mongoose from "mongoose";
 import { Category, Product } from "./src/model/index.js";
 import { categories, products } from "./seedData.js";
+dotenv.config();
+
 
 async function seedDatabse(){
     try {
-        await mongoose.connect(process.env.MONGO_URI, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-        });
+        await mongoose.connect(process.env.MONGO_URL);
         await Product.deleteMany({});
         await Category.deleteMany({});
 
