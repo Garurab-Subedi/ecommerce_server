@@ -1,4 +1,5 @@
-import  Product  from "../../model";
+import  Product  from "../../model/products.js";
+
 
 export const getProductsByCategoryId = async (req, reply) => {
     const { categoryId } = req.params;
