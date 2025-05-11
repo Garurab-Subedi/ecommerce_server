@@ -1,6 +1,7 @@
 import fastifySession from "@fastify/session";
 import ConnectMongoDBSession from "connect-mongodb-session";
 import "dotenv/config";
+import { Admin } from "../model/index.js";
 
 export const PORT = process.env.PORT || 3000;
 export const COOKIE_PASSWORD = process.env.COOKIE_PASSWORD;

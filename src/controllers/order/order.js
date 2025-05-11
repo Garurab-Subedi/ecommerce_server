@@ -40,7 +40,7 @@ export const createOrder = async(req, reply) => {
         return reply.status(201).send(savedOrder)
 
     } catch (error) {
-        console.log(err);
+        console.log(error);
         return reply.status(500).send({ message: "Failed to create project", error})
     }
 }

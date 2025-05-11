@@ -1,5 +1,7 @@
 import { Customer, DeliveryPartner } from "../../model/user.js";
 import jwt from "jsonwebtoken";
+import dotenv from 'dotenv';
+dotenv.config();
 
 
 const generateTokens = (user) => {
@@ -8,7 +10,7 @@ const generateTokens = (user) => {
             userId: user._id,
             role: user.role,
         },
-        process.env.ACEESS_TOKEN_SECRET,
+        process.env.ACCESS_TOKEN_SECRET,
         { expiresIn: "1d" }
     );
     const refreshToken = jwt.sign(
